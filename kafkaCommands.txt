@@ -1,0 +1,24 @@
+Open first CMD
+1. C:\kafka_2.13-3.7.1>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+
+Open Second CMD
+1. C:\kafka_2.13-3.7.1>bin\windows\kafka-server-start.bat config\server.properties
+
+
+Open Third CMD
+1. C:\kafka_2.13-3.7.1>bin\windows\kafka-topics.bat
+
+Create new topic
+2. C:\kafka_2.13-3.7.1>bin\windows\kafka-topics.bat --create --topic user-topic --bootstrap-server localhost:9092
+
+3. C:\kafka_2.13-3.7.1>bin\windows\kafka-acls.bat --help
+4. C:\kafka_2.13-3.7.1>bin\windows\kafka-acls.bat --list
+
+Produce new topic
+5. C:\kafka_2.13-3.7.1>bin\windows\kafka-console-producer.bat --topic user-topic --bootstrap-server localhost:9092
+
+
+Open Fourth CMD
+Consuming Message and we can produce multiple consumer
+1.C:\kafka_2.13-3.7.1>bin\windows\kafka-console-consumer.bat --topic user-topic --from-beginning --bootstrap-server localhost:9092
